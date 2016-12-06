@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<meta name="format-detection" content="telephone=no">
+		<title>新增员工</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top nav-style">
+			<div class="navbar-inner navbar-header">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </button>
+				<a class="brand logo-padd" href="#"><img src="img/logo.png" width="280"></a>
+				<div class="nav-collapse collapse" id="navbar-collapse">
+					<ul class="nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle username" data-toggle="dropdown" href="#">
+								<i class="headimg"><img src="img/touxiang.jpg" width="80"></i>
+								<span>测试：2016072803</span>
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li>
+									<a href="modifyPassword.html">
+										<i class="iconfont changepsw-icon">&#xe62c;</i>
+										<span>修改密码</span>
+									</a>
+								</li>
+								<li>
+									<a href="personalInfo.html">
+										<i class="iconfont changepsw-icon">&#xe64c;</i>
+										<span>个人信息修改</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="logout" href="login.html">
+								<i class="iconfont">&#xe607;</i>
+								<span>退出</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar-style">
+			<ul class="sidebar-menu" style="margin-top: 64px;" >
+			    <li >
+				    <a href="index.html" class="nav nav-list nav-header menu-first collapse fonts14">
+				   	 	<i class="iconfont">&#xe608;</i>
+				   	 	首页
+				    </a>
+			    </li>
+			    <li>
+				    <a href="#r-work" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe603;</span>
+						条码支付
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="r-work" class="nav nav-list collapse menu-second fonts12">
+						<li id="pa-left2-1"><a href="mobilePay.html" class="lineh26">交易查询</a></li>
+						<li id="pa-left2-2"><a href="refundManage.html" class="lineh26">退款管理</a></li>
+						<li id="pa-left2-3"><a href="refundStatistics.html" class="lineh26">退款统计</a></li>
+					</ul>
+			    </li>
+			    <li>
+				    <a href="#weixin" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe644;</span>
+						POS刷卡
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="weixin" class="nav nav-list collapse menu-second fonts12">
+						<li id="pa-left3-1"><a href="cardPay.html" class="lineh26">交易查询</a></li>
+						<!--<li id="pa-left3-2"><a href="accountManage.html" class="lineh26">对账单查询</a></li>-->
+					</ul>
+			    </li>
+			    <li>
+				    <a href="#rule" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe605;</span>
+						自助管理
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="rule" class="nav nav-list menu-second fonts12">
+						<li id="pa-left5-1" class="active"><a href="operater.html" class="lineh26">员工管理</a></li>
+					</ul>
+			    </li>
+			</ul>
+		</div>
+		<div class="right-content">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="min_width_894">
+							<div class="res-title height_45">
+								<h3 class="pull-left">新增员工</h3>
+							</div>	
+							<div class="pagebg" style="padding-bottom: 20px;">
+								<div class="margin_l25 margin_t20">
+									<h4><i class="iconfont operater-icon">&#xe615;</i> 基本信息</h4>
+									<hr/>
+								</div>
+								<div class="form-inline m-massage add-operater" style="padding-top: 10px; padding-bottom: 40px;">
+									<div>
+										<div class="margin_l36 dis_in_blo">
+											<span class="c_red">*</span>
+										    <span class="margin_r7">登录名</span>
+										    <input type="text" class="login-input">
+										    <p class="c_red position_xia">请输入登录名</p>
+										</div>
+										<div class="dis_in_blo margin_l132 name-cue">
+											<span class="c_red">*</span>
+											<span class="margin_r7">姓名</span>
+											<input type="text" class="login-input">
+											<p class="c_red position_xia">请输入姓名</p>
+										</div>
+									</div>
+									<div style="margin-top: 40px;">
+										<div class="dis_in_blo mobile-cue" style="margin-left: 22px;">
+											<span class="c_red" style="visibility: hidden;">*</span>
+											<span class="margin_r7">身份证号</span>
+											<input type="text" class="login-input">
+											<!--<p class="c_red position_xia">请输入手机验证码</p>-->
+										</div>
+										<div class="marginl104 dis_in_blo user-rights">
+											<span class="c_red">*</span>
+										    <span class="margin_r7">用户权限</span>
+										    <input type="text" class="login-input" href="#user-rights-model"  role="button" data-toggle="modal">
+										    <p class="c_red position_xia">请选择用户权限</p>
+										    <div id="user-rights-model" class="modal hide fade terminal-info"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										    		<div class="modal-header" style="border: none;">
+											    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											  		<h3 class="apply-num">权限选择</h3>
+							        				</div>
+							        				<div class="modal-body">
+							        					<div class="modal-check">
+														<div class="form-inline m-massage role-name">
+							                                <div class="form-group in-text in-text1 margin_r30">
+							                                    <label class="form-label">角色名称</label>
+							                        		    		<input type="text" class="form-control login-input">
+							                                </div>
+							                                <div class="btn-q pull-left width136" style="margin-top: 0;">
+								                            		<button class="btn-quary blue-btn" style="margin-top: 0;">查询</button>
+								                            </div>
+						                                	</div>
+					                               </div>
+					                               <div class="login-content mobile-contest over-height">
+											        		<table class="t-table select-table" style="word-break: break-all;">
+												        		<thead class="bgcolor-grey lineh58">
+												        			<th>角色编号</th>
+												        			<th>角色名称</th>
+												        			<th>角色说明</th>
+												        		</thead>
+												        		<tbody>
+												        			<tr class="lineh58" style="display: none;">
+												        				<td colspan="2">没有符合条件的角色！</td>
+												        			</tr>
+												        			<tr class="lineh58">
+												        				<td class="paddingrl10">201608080001</td>
+												        				<td class="paddingrl10">测试2016072803</td>
+												        				<td class="paddingrl10">123456</td>
+												        			</tr>
+												        			<tr class="lineh58 bgcolor-lg">
+												        				<td class="paddingrl10">201608080001</td>
+												        				<td class="paddingrl10">测试2016072803</td>
+												        				<td class="paddingrl10">123456</td>
+												        			</tr>
+												        			<tr class="lineh58">
+												        				<td class="paddingrl10">201608080001</td>
+												        				<td class="paddingrl10">测试2016072803</td>
+												        				<td class="paddingrl10">123456</td>
+												        			</tr>
+												        			<tr class="lineh58 bgcolor-lg">
+												        				<td class="paddingrl10">201608080001</td>
+												        				<td class="paddingrl10">测试2016072803</td>
+												        				<td class="paddingrl10">123456</td>
+												        			</tr>
+												        			<tr class="lineh58">
+												        				<td class="paddingrl10">201608080001</td>
+												        				<td class="paddingrl10">测试2016072803</td>
+												        				<td class="paddingrl10">123456</td>
+												        			</tr>
+											        			</tbody>
+										        			</table>
+									        			</div>
+		                        		    			</div>
+			                        		    		<div class="modal-footer dialog-btn">
+												    <button class="sure-btn blue-btn" data-dismiss="modal" aria-hidden="true">确定</button>
+												    <button class="btn-quary-back cancel-btn" data-dismiss="modal" aria-hidden="true">取消</button>
+												</div>
+										    </div>
+										</div>
+									</div>
+									<div style="margin-top: 40px;">
+										<div class="margin_l36 dis_in_blo">
+											<span class="c_red">*</span>
+										    <span class="margin_r7">手机号</span>
+										    <input type="text" class="login-input" style="width: 130px;">
+										    <p class="c_red position_xia">请输入手机号</p>
+										    <button class="sure-btn blue-btn btn-width" href="#img-ma-modal" role="button" data-toggle="modal">发送验证码</button>
+										    <div id="img-ma-modal" class="modal hide fade refund-apply"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										    		<div class="modal-header positionr" style="border: none;">
+											    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												</div>
+							        				<div class="modal-body apply-con ma-body">
+							        					<div class="massage-input">
+							        						<input class="ma-input" type="text" placeholder="输入验证码">
+				        									<div class="yanma"><img src="img/yanzhnengma_03.png"></div>
+							        					</div>
+							        				</div>
+							        				<div class="modal-footer dialog-btn">
+												    <button class="sure-btn blue-btn" data-dismiss="modal" aria-hidden="true">确定</button>
+												</div>
+										    </div>
+										</div>
+										<div class="dis_in_blo margin_l90 mobile-cue">
+											<span class="c_red" >*</span>
+											<span class="margin_r7">短信验证码</span>
+											<input type="text" class="login-input">
+											<p class="c_red position_xia">请输入短信验证码</p>
+										</div>
+									</div>
+		                        </div>
+	                       	</div>
+							<div class="margin_b24 margin_t18">
+								<div class="btn-qq">
+		                        <button class="btn-quary blue-btn">提交</button>
+		                        <button class="btn-quary-back margin_l25 kuang-btn" onclick="window.location.href='operater.html'">返回</button>
+		                       </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+	        <div class="footer-link text-center ">
+	            <a class="text-center" style="display: inline-block;">法律声明</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">隐私权政策</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">联系我们</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">民生招聘</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">电子邮件</a>
+	        </div>
+	        <p>中国民生银行 京ICP证040430号 京ICP备050203752号 电信业务审批 【2012】 字第440函</p>
+	        <p>24小时客户服务热线 : 95568  对公专线 : 4006895568 小微金额服务专线 : 4006895568 电信业务审批【2012】 字第520函</p>
+	    </div>
+		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script src="js/echarts.common.min.js"></script>
+    		<script src="js/statiChart.js"></script>
+    		<script type="text/javascript">
+    			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+    			
+    		</script>
+	</body>
+</html>

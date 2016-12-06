@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<meta name="format-detection" content="telephone=no">
+		<title>刷卡支付交易查询</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top nav-style">
+			<div class="navbar-inner navbar-header">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+			    </button>
+				<a class="brand logo-padd" href="#"><img src="img/logo.png" width="280"></a>
+				<div class="nav-collapse collapse" id="navbar-collapse">
+					<ul class="nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle username" data-toggle="dropdown" href="#">
+								<i class="headimg"><img src="img/touxiang.jpg" width="80"></i>
+								<span>测试：2016072803</span>
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li>
+									<a href="modifyPassword.html">
+										<i class="iconfont changepsw-icon">&#xe62c;</i>
+										<span>修改密码</span>
+									</a>
+								</li>
+								<li>
+									<a href="personalInfo.html">
+										<i class="iconfont changepsw-icon">&#xe64c;</i>
+										<span>个人信息修改</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="logout" href="login.html">
+								<i class="iconfont">&#xe607;</i>
+								<span>退出</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar-style">
+			<ul class="sidebar-menu" style="margin-top: 64px;" >
+			    <li >
+				    <a href="index.html" class="nav nav-list nav-header menu-first collapse fonts14">
+				   	 	<i class="iconfont">&#xe608;</i>
+				   	 	首页
+				    </a>
+			    </li>
+			    <li>
+				    <a href="#r-work" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe644;</span>
+						条码支付
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="r-work" class="nav nav-list collapse menu-second fonts12">
+						<li id="pa-left2-1" class="active"><a href="mobilePay.html" class="lineh26">交易查询</a></li>
+						<li id="pa-left2-2"><a href="refundManage.html" class="lineh26">退款管理</a></li>
+						<li id="pa-left2-3"><a href="refundStatistics.html" class="lineh26">退款统计</a></li>
+					</ul>
+			    </li>
+			    <li>
+				    <a href="#weixin" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe625;</span>
+						POS刷卡
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="weixin" class="nav nav-list menu-second fonts12">
+						<li id="pa-left3-1" class="active"><a href="cardPay.html" class="lineh26">交易查询</a></li>
+						<!--<li id="pa-left3-2"><a href="accountManage.html" class="lineh26">对账单查询</a></li>-->
+					</ul>
+			    </li>
+			    <li>
+				    <a href="#rule" class="nav nav-list nav-header menu-first collapsed fonts14" data-toggle="collapse">
+						<span class="iconfont">&#xe605;</span>
+						自助管理
+						<span class="iconfont pull-right" style="position: relative"></span>
+					</a>
+					<ul id="rule" class="nav nav-list collapse menu-second fonts12">
+						<li id="pa-left5-1"><a href="operater.html" class="lineh26">员工管理</a></li>
+					</ul>
+			    </li>
+			</ul>
+		</div>
+		<div class="right-content">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="min_width_894">
+							<div class="res-title height_45">
+								<h3 class="pull-left">刷卡支付交易查询</h3>
+								<!--<a class="dl-font margin_t20">实时对账单下载<i class="iconfont fonts20 colorb paddingl10">&#xe60b;</i></a>-->
+							</div>
+							<div class="check-info">
+								<div class="form-inline m-massage cardpay">
+		                            <div class="form-group in-text margin_r30">
+	                                    <label class="form-label">终端</label>
+	                        		    		<input type="text" class="date-input btn-input" href="#terminal-model"  role="button" data-toggle="modal">
+	                        		    		<div id="terminal-model" class="modal hide fade terminal-info"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	                        		    			<div class="modal-header" style="border: none;">
+										    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										  		<h3 class="apply-num">终端选择</h3>
+						        				</div>
+										    <div class="modal-body">
+						        					<div class="modal-check" style="margin-top: 0;">
+													<div class="form-inline m-massage">
+						                                <div class="form-group in-text in-text1 margin_r30">
+						                                    <label class="form-label">终端号</label>
+						                        		    		<input type="text" class="form-control login-input">
+						                                </div>
+						                                <div class="form-group in-text margin_r30">
+						                                    <label class="form-label">终端别名</label>
+						                        		    		<input type="text" class="form-control login-input">
+						                                </div>
+						                                <div class="btn-q pull-left width136" style="margin-top: 0;">
+							                            		<button class="btn-quary blue-btn" style="margin-top: 0;">查询</button>
+							                            </div>
+					                                	</div>
+				                               </div>
+				                               <div class="login-content mobile-contest over-height">
+										        		<table class="t-table select-table">
+											        		<thead class="bgcolor-grey lineh58">
+											        			<th  class="paddingrl10"><input type="checkbox"></th>
+											        			<th>终端号</th>
+											        			<th>终端出厂编号</th>
+											        			<th>终端别名</th>
+											        		</thead>
+											        		<tbody>
+											        			<tr class="lineh58" style="display: none;">
+											        				<td colspan="2">没有符合条件的终端！</td>
+											        			</tr>
+											        			<tr class="lineh58">
+											        				<td class="paddingrl10"><input type="checkbox"></td>
+											        				<td class="paddingrl10">123456</td>
+											        				<td class="paddingrl10">1234567891234567</td>
+											        				<td class="paddingrl10">终端1</td>
+											        			</tr>
+											        			<tr class="lineh58 bgcolor-lg">
+											        				<td class="paddingrl10"><input type="checkbox"></td>
+											        				<td class="paddingrl10">123456</td>
+											        				<td class="paddingrl10">1234567891234567</td>
+											        				<td class="paddingrl10">终端2</td>
+											        			</tr>
+											        			<tr class="lineh58">
+											        				<td class="paddingrl10"><input type="checkbox"></td>
+											        				<td class="paddingrl10">123456</td>
+											        				<td class="paddingrl10">1234567891234567</td>
+											        				<td class="paddingrl10">终端3</td>
+											        			</tr>
+											        			<tr class="lineh58 bgcolor-lg">
+											        				<td class="paddingrl10"><input type="checkbox"></td>
+											        				<td class="paddingrl10">123456</td>
+											        				<td class="paddingrl10">1234567891234567</td>
+											        				<td class="paddingrl10">终端4</td>
+											        			</tr>
+											        			<tr class="lineh58">
+											        				<td class="paddingrl10"><input type="checkbox"></td>
+											        				<td class="paddingrl10">123456</td>
+											        				<td class="paddingrl10">1234567891234567</td>
+											        				<td class="paddingrl10">终端5</td>
+											        			</tr>
+										        			</tbody>
+									        			</table>
+								        			</div>
+								        			
+		                        		    		</div>
+		                        		    		<div class="modal-footer dialog-btn">
+											    <button class="sure-btn blue-btn" data-dismiss="modal" aria-hidden="true">确定</button>
+											    <button class="btn-quary-back cancel-btn" data-dismiss="modal" aria-hidden="true">取消</button>
+											</div>
+		                            		</div>
+		                       	 	</div>
+		                       	 	<div class="form-group in-text margin_r30">
+		                            		<label class="form-label pull-left lineh34">交易状态</label>
+		                            		<span class="deal-state pull-left">
+			                            		<select>
+			                            			<option>收款</option>
+			                            			<option>付款</option>
+			                            		</select>
+		                            		</span>
+		                            </div>
+		                            <div class="form-group in-text margin_r30">
+	                                    <label class="form-label">开始日期</label>
+	                       		        <input type="text" class="date-input">
+		                            </div>
+		                            <div class="form-group in-text">
+	                                    <label class="form-label">结束日期</label>
+	                       		        <input type="text" class="date-input">
+		                            </div>
+								</div>
+								<div class="btn-q pull-right width270 btn-pos" style="clear: both;">
+	                            		<button class="btn-quary blue-btn" style="margin-top: 6px;">查询</button>
+	                            		<button class="btn-quary blue-btn" style="margin-top: 6px;">实时账单下载</button>
+		                        </div>
+							</div>
+							<!--<h5 class="pull-right" style="font-weight: normal; ">共查询出&nbsp;<span style="color: #359bff; font-size: 20px;">10</span>&nbsp;条符合条件&nbsp;&nbsp;</h5>-->
+						    <div class="login-content mobile-contest">
+					        		<table class="t-table">
+						        		<thead class="bgcolor-grey lineh58">
+						        			<th>银联商户号</th>
+						        			<th>终端号</th>
+						        			<th>参考号</th>
+						        			<th>交易类型</th>
+						        			<th>交易日期</th>
+						        			<th>交易时间</th>
+						        			<th>交易卡号</th>
+						        			<th>卡类型</th>
+						        			<th>相关账号</th>
+						        			<th>交易金额(元)</th>
+						        			<th>实扣手续费(元)</th>
+						        			<th>交易状态</th>
+						        			<th>入账状态</th>
+						        		</thead>
+						        		<tbody>
+						        			<tr class="lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="bgcolor-lg lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="bgcolor-lg lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="bgcolor-lg lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="bgcolor-lg lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        			<tr class="bgcolor-lg lineh58">
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">123456</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">2016-10-11</td>
+						        				<td class="paddingrl10">10:11</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10">商务型</td>
+						        				<td class="paddingrl10">147852369</td>
+						        				<td class="paddingrl10 fontcs">10,000</td>
+						        				<td class="fontcs paddingrl10">100</td>
+						        				<td class="paddingrl10">完成</td>
+						        				<td>完成</td>
+						        			</tr>
+						        		</tbody>
+					        		</table>
+							</div>
+							<div class="res-title" style="margin-top: 10px;">
+								<div class="overflowh">
+									<div class="floatr page-box">
+										<span id="first-page" class="iconfont pull-left">&#xe61b;</span>
+										<span id="pre-page" class="iconfont pull-left marginl10">&#xe61e;</span>
+										<span class="page-num pull-left">
+											<span class="pull-left displayb">第</span>
+											<div class="fenye-box">
+												<select class="fenye marginr15">
+													<option>1</option>  
+										            <option>2</option>  
+										            <option>3</option>  
+										            <option>4</option>  
+										            <option>5</option> 
+												</select>
+											</div>
+											<span class="pull-left displayb">页/共5页</span>
+											<span class="pull-left displayb marginl10">共&nbsp;30&nbsp;条记录</span>
+										</span>
+										<span id="next-page" class="iconfont pull-left">&#xe61f;</span>
+										<span id="last-page" class="iconfont pull-left marginl10">&#xe61c;</span>
+									</div>
+								</div>
+							</div>
+							<div class="cue-info">
+								<p class="colory">操作提示：对当月的交易信息进行查询。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+	        <div class="footer-link text-center ">
+	            <a class="text-center" style="display: inline-block;">法律声明</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">隐私权政策</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">联系我们</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">民生招聘</a>
+	            <span>|</span>
+	            <a class="text-center" style="display: inline-block">电子邮件</a>
+	        </div>
+	        <p>中国民生银行 京ICP证040430号 京ICP备050203752号 电信业务审批 【2012】 字第440函</p>
+	        <p>24小时客户服务热线 : 95568  对公专线 : 4006895568 小微金额服务专线 : 4006895568 电信业务审批【2012】 字第520函</p>
+	    </div>
+		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script src="js/echarts.common.min.js"></script>
+    		<script src="js/statiChart.js"></script>
+    		<script type="text/javascript">
+    			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+    			
+    		</script>
+	</body>
+</html>
